@@ -2,13 +2,9 @@ import express from "express";
 import axios from "axios";
 import cors from "cors";
 
-let c = cors({
-  origin: "*",
-});
-
 const app = express();
 
-app.use(c);
+app.use(cors());
 
 app.get("/:endpoint([\\/\\w\\.-]*)", async (req, res) => {
   axios
@@ -21,6 +17,6 @@ app.get("/:endpoint([\\/\\w\\.-]*)", async (req, res) => {
     });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT);
