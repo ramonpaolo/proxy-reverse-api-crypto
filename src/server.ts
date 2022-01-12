@@ -10,7 +10,7 @@ const app = express();
 
 app.use(c);
 
-app.get("/:endpoint([\\/\\w.-]*)", async (req, res) => {
+app.get("/:endpoint([\\/\\w\\.-]*)", async (req, res) => {
   axios
     .get(req.params.endpoint)
     .then(async (r) => {
